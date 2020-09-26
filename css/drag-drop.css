@@ -1,0 +1,241 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: black;
+}
+.drag-start {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: lightgrey;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+#drag-container {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+  background: black;
+}
+
+.spin:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: linear-gradient(greenyellow, lightblue);
+
+  z-index: -1;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+#drag-container > #line {
+  content: "";
+  height: 0px;
+  background: linear-gradient(greenyellow, lightblue);
+  width: 5px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transition: all 0.5s;
+}
+
+.hover2 {
+  background: black;
+}
+.dragging {
+  opacity: 0.5;
+}
+section#drag-and-drop {
+  height: 100vh;
+}
+section#drag-and-drop img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: black;
+  /* border: 1px solid black; */
+}
+#drag-and-drop h1 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+  z-index: 1;
+}
+section#map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#myMap {
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+  z-index: 1;
+}
+.arrow {
+  color: white;
+  font-size: 50px;
+  letter-spacing: -5px;
+  position: relative;
+  animation: ping 1s infinite linear;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+}
+@keyframes ping {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 50px;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mini-layout {
+  height: 75px;
+  width: 300px;
+  background: transparent;
+  border: 5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  transition: all 0.5s;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.controls-layout .btn {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  transition: all 0.5s;
+}
+.controls-layout .btn:hover {
+  /* font-weight: bold;  */
+  color: black;
+  background: white;
+  border: 1px solid white;
+}
+.project-name {
+  background: rgba(255, 255, 255, 0.1);
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all 0.5s;
+}
+.active.mini-layout {
+  height: 475px;
+
+  border: 0px;
+}
+#b4 {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 50px;
+}
+.active.mini-layout .project-name {
+  display: none;
+}
+.row {
+  margin: 0px !important;
+}
+.flip-card {
+  height: 475px;
+  width: 100%;
+}
+.flip-card-inner {
+  border: 3px solid #d3d3d32e;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-color: #bbb;
+  color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back h1 {
+  font-size: 2rem;
+  margin: 30px 0px;
+}
+.flip-card-back ul {
+  padding: 0px;
+  list-style-type: none;
+}
+.flip-card-back ul li {
+  font-size: 20px;
+  margin: 10px 0px;
+}
+.flip-card-back a {
+  color: white;
+  border: 2px solid white;
+  display: inline-flex;
+  width: 150px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.flip-card-back a:hover {
+  color: black;
+  background: white;
+}
+#pj1 .flip-card-front {
+  background-image: url(../img/pj1.png);
+}
+#pj2 .flip-card-front {
+  background-image: url(../img/pj2.png);
+}
+
+#pj3 .flip-card-front {
+  background-image: url(../img/pj3.png);
+}
